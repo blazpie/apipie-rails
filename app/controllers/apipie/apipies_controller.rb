@@ -2,8 +2,8 @@ module Apipie
   class ApipiesController < ActionController::Base
     layout Apipie.configuration.layout
 
-    around_filter :set_script_name
-    before_filter :authenticate
+    around_action :set_script_name
+    before_action :authenticate
 
     def authenticate
       if Apipie.configuration.authenticate
